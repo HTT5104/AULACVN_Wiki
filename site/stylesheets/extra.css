@@ -1,0 +1,146 @@
+/* =========================================================
+   HỆ THỐNG MÀU SẮC TÙY CHỈNH (CUSTOM HEX COLOR SYSTEM)
+   Thay đổi các mã Hex bên dưới để tùy biến giao diện
+   ========================================================= */
+
+:root {
+  /* --- 1. CHỦ ĐỀ SÁNG (LIGHT MODE) --- */
+  --md-primary-fg-color:        #1e293b; /* Thanh Header & Menu chính */
+  --md-primary-fg-color--light: #334155; /* Menu phụ & Hover */
+  --md-primary-fg-color--dark:  #0f172a; /* Màu tối của Header */
+  
+  --md-accent-fg-color:         #2563eb; /* Màu điểm nhấn (Link, Nút bấm, Active Menu) */
+  --md-accent-fg-color--transparent: rgba(37, 99, 235, 0.1);
+
+  --md-default-bg-color:        #ffffff; /* Màu nền chính toàn trang */
+  --md-default-fg-color:        #1e293b; /* Màu chữ nội dung chính */
+  --md-default-fg-color--light: #64748b; /* Màu chữ phụ / mô tả */
+
+  /* Bảng biểu (Tables) */
+  --md-table-header-bg:         #f1f5f9; /* Nền tiêu đề hàng trên của Bảng */
+  --md-table-header-fg:         #0f172a; /* Chữ tiêu đề Bảng */
+  --md-table-row-hover:         #f8fafc; /* Màu dòng Bảng khi rê chuột */
+  --md-table-border-color:      #e2e8f0; /* Đường viền Bảng */
+
+  /* Thẻ ghi chú (Admonition / Callout Boxes) */
+  --md-admonition-note-bg:      #eff6ff; /* Nền khối Ghi chú (Note) */
+  --md-admonition-note-border:  #3b82f6; /* Viền khối Ghi chú */
+  --md-admonition-tip-bg:       #f0fdf4; /* Nền khối Mẹo chiến thuật (Tip) */
+  --md-admonition-tip-border:   #22c55e; /* Viền khối Mẹo chiến thuật */
+}
+
+[data-md-color-scheme="slate"] {
+  /* --- 2. CHỦ ĐỀ TỐI (DARK MODE) --- */
+  --md-primary-fg-color:        #0f172a; /* Thanh Header Dark Mode */
+  --md-primary-fg-color--light: #1e293b;
+  --md-primary-fg-color--dark:  #020617;
+
+  --md-accent-fg-color:         #38bdf8; /* Màu điểm nhấn Dark Mode */
+  --md-accent-fg-color--transparent: rgba(56, 189, 248, 0.15);
+
+  --md-default-bg-color:        #0b0f19; /* Màu nền tối toàn trang */
+  --md-default-fg-color:        #e2e8f0; /* Màu chữ chính Dark Mode */
+  --md-default-fg-color--light: #94a3b8; /* Màu chữ phụ Dark Mode */
+
+  /* Bảng biểu (Tables - Dark Mode) */
+  --md-table-header-bg:         #1e293b; /* Nền tiêu đề Bảng */
+  --md-table-header-fg:         #f8fafc; /* Chữ tiêu đề Bảng */
+  --md-table-row-hover:         #1e293b; /* Màu dòng Bảng khi rê chuột */
+  --md-table-border-color:      #334155; /* Đường viền Bảng */
+
+  /* Thẻ ghi chú (Admonition - Dark Mode) */
+  --md-admonition-note-bg:      #1e3a8a33;
+  --md-admonition-note-border:  #60a5fa;
+  --md-admonition-tip-bg:       #14532d33;
+  --md-admonition-tip-border:   #4ade80;
+}
+
+/* =========================================================
+   ÁP DỤNG MÀU SẮC VÀO CÁC ĐỐI TƯỢNG VỚI MÃ HEX
+   ========================================================= */
+
+/* Tiêu đề Bảng */
+.md-typeset table:not([class]) th {
+  background-color: var(--md-table-header-bg) !important;
+  color: var(--md-table-header-fg) !important;
+  font-weight: 700;
+}
+
+/* Đường viền Ô trong Bảng */
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th {
+  border: 1px solid var(--md-table-border-color) !important;
+}
+
+/* Trạng thái hover dòng Bảng */
+.md-typeset table:not([class]) tr:hover td {
+  background-color: var(--md-table-row-hover);
+}
+
+/* Mục đang chọn ở Menu Sidebar */
+.md-nav__link--active {
+  color: var(--md-accent-fg-color) !important;
+  font-weight: 600;
+}
+
+/* Nút cuộn lên đầu trang (Back to top) */
+.md-top {
+  background-color: var(--md-primary-fg-color) !important;
+  color: var(--md-default-bg-color) !important;
+}
+
+/* =========================================================
+   ÉP 3 MÀU RIÊNG BIỆT CHO MERMAID TRÊN MKDOCS MATERIAL
+   ========================================================= */
+
+/* 🔴 1. CẤP CAO: NỀN ĐỎ ĐẬM - CHỮ TRẮNG */
+.md-typeset .mermaid .node.cao rect,
+.md-typeset .mermaid .node.cao polygon,
+.md-typeset .mermaid .node.cao .label-container {
+  fill: #9f1239 !important;
+  stroke: #f43f5e !important;
+}
+.md-typeset .mermaid .node.cao *,
+.md-typeset .mermaid .node.cao .nodeLabel,
+.md-typeset .mermaid .node.cao div,
+.md-typeset .mermaid .node.cao span {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* 🟣 2. CẤP TRUNG: NỀN TÍM ĐẬM - CHỮ TRẮNG */
+.md-typeset .mermaid .node.trung rect,
+.md-typeset .mermaid .node.trung polygon,
+.md-typeset .mermaid .node.trung .label-container {
+  fill: #6b21a8 !important;
+  stroke: #c084fc !important;
+}
+.md-typeset .mermaid .node.trung *,
+.md-typeset .mermaid .node.trung .nodeLabel,
+.md-typeset .mermaid .node.trung div,
+.md-typeset .mermaid .node.trung span {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* 🔵 3. CẤP THẤP: NỀN XANH DƯƠNG ĐẬM - CHỮ TRẮNG */
+.md-typeset .mermaid .node.thap rect,
+.md-typeset .mermaid .node.thap polygon,
+.md-typeset .mermaid .node.thap .label-container {
+  fill: #1e40af !important;
+  stroke: #60a5fa !important;
+}
+.md-typeset .mermaid .node.thap *,
+.md-typeset .mermaid .node.thap .nodeLabel,
+.md-typeset .mermaid .node.thap div,
+.md-typeset .mermaid .node.thap span {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* Đường mũi tên nối giữa các ô */
+.md-typeset .mermaid .flowchart-link,
+.md-typeset .mermaid .marker {
+  stroke: #94a3b8 !important;
+  fill: #94a3b8 !important;
+}

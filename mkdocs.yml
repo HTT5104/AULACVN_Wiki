@@ -1,0 +1,64 @@
+site_name: ÂULẠCVN Wiki
+site_url: https://htt5104.github.io/AULACVN_Wiki/
+site_description: Cẩm nang dành riêng cho thành viên Liên minh ÂULẠCVN
+site_author: ÂULẠCVN
+
+theme:
+  name: material
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+  language: vi
+  palette:
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Chuyển sang chế độ sáng
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Chuyển sang chế độ tối
+  features:
+    - navigation.tabs          # Menu ngang cấp 1 trên Header
+    - navigation.tabs.sticky   # Cố định menu ngang khi cuộn
+    # Đã xóa navigation.sections để bật cơ chế menu thu gọn (Collapsible)
+    - navigation.indexes       # Bấm vào tên mục cha để mở trang Tổng quan
+    - navigation.top           # Nút cuộn lên đầu trang
+    - navigation.tracking      # Highlight mục đang xem trên thanh địa chỉ
+    - navigation.prune         # Tối ưu tải trang khi có nhiều bài viết
+    - search.suggest
+    - search.highlight
+    - content.tables.overflow
+
+markdown_extensions:
+  - tables
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+nav:
+  - Trang chủ: index.md
+  - Hướng dẫn chung: huong-dan-thao-tac-chung.md
+  - Thông tin mùa giải:
+    - thong-tin-mua-giai/index.md
+    - Mùa 2:
+      - thong-tin-mua-giai/mua-2/index.md
+      - Thần Thú Trợ Chiến: thong-tin-mua-giai/mua-2/than-thu-tro-chien.md
+      - Hệ Điển Tịch Chiến Lược: thong-tin-mua-giai/mua-2/4-he-dien-tich.md
+      - Hệ Thống 9 Binh Chủng: thong-tin-mua-giai/mua-2/9-binh-chung.md
+      - Tướng & Trang Bị Mới: thong-tin-mua-giai/mua-2/vo-tuong-trang-bi.md
+      - Kế Sách Thời Tiết: thong-tin-mua-giai/mua-2/ke-sach-thoi-tiet.md
+      - Buff Thiên Xu Đài & Tác Chiến: thong-tin-mua-giai/mua-2/thien-xu-dai.md
+    - Mùa 3: thong-tin-mua-giai/mua-3.md
+
+extra_css:
+  - stylesheets/extra.css
